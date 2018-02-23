@@ -12,9 +12,13 @@ namespace ProyectoSQLServer
 {
     public partial class Form1 : Form
     {
+        private DatabaseConnection databaseconnection;
+
         public Form1()
         {
             InitializeComponent();
+            databaseconnection = new DatabaseConnection(@"DESKTOP-Q77ELOA\SQLEXPRESS", "universidad");
+            this.dataGridView1.DataSource = databaseconnection.Refresh("Informacion_universidad.Zona");
         }
     }
 }
