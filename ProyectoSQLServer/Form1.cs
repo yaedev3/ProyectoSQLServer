@@ -17,8 +17,10 @@ namespace ProyectoSQLServer
         public Form1()
         {
             InitializeComponent();
-            databaseconnection = new DatabaseConnection(@"DESKTOP-Q77ELOA\SQLEXPRESS", "universidad");
-            this.dataGridView1.DataSource = databaseconnection.Refresh("Informacion_universidad.Zona");
+            databaseconnection = new DatabaseConnection(@"DESKTOP-Q77ELOA\SQLEXPRESS", "databasecar");
+            //databaseconnection.InsertInto("Auto", "NoSerie, Nombre, Marca, Modelo, PrecioFabrica, PrecioVenta", "'hoolamundo','tsuru','niisan','hibrido',10.5,50.5");
+            databaseconnection.InsertInto("Cliente", "Nombre,Domicilio,Telefono,Ocupacion", "'Juan Perez','Himno Nacional', '4444954621','Estudiante'");
+            this.dataGridView1.DataSource = databaseconnection.Refresh("Cliente", "*");
         }
     }
 }

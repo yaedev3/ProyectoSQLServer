@@ -16,42 +16,84 @@ namespace ProyectoSQLServer
         private OleDbCommand command;
         private OleDbDataAdapter adapter;
 
+        /**
+         * Constructor de la clase DatabaseConnection, hace la conexion inicial con la base de datos.
+         * string server - Servidor de nuestra computadora.
+         * string database - Nombre de la base de datos.
+         * */
         public DatabaseConnection(string server, string database)
         {
             connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server + ";Database=" + database + ";Trusted_Connection=yes");
         }
 
+        /**
+         * Hace una consulta INSERT INTO a una tabla 
+         * Ejemplo: INSERT INTO Cliente (Nombre,Domicilio,Telefono,Ocupacion) VALUES ('Juan Perez','Himno Nacional','8281545','Estudiante')
+         * Formato:INSERT INTO tableName (order) VALUES (value)
+         * string tableName - Nombre de la tabla.
+         * string order - Nombre de los atributos en el orden que se van a insertar separados por una ",".
+         * string value - Valores de los atributos que se van a insertar separados por una "," y las cadenas entre comillas simples.
+         * */
         public void InsertInto(string tableName, string order, string value)
         {
-            string query = "INSERT INTO " + tableName + "(" + order + ") VALUES (" + value + ")";
+            string query = string.Format("INSERT INTO {0} ({1}) VALUES ({2})", tableName, order, value);
             connection.Open();
             command = new OleDbCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
 
+        /**
+        * Enriquez Capetillo Gerardo Arturo
+        * Hace una consulta DELETE de una tabla que tenga el id seleccionado.
+        * Ejemplo: DELETE FROM Agente WHERE idAgente = 4
+        * Formato: DELETE FROM tableName WHERE idtableName = id
+        * string tableName - 
+        * string id - 
+        * */
         public void DeleteFrom(string tableName, string id)
         {
-            string query = "DELETE FROM " + tableName + "WHERE id_" + tableName + "=" + id;
+            string query = string.Format("DELETE FROM {0} WHERE id{1} = {2}", tableName, tableName, id);
             connection.Open();
             command = new OleDbCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
 
+        /**
+        * Enriquez Capetillo Gerardo Arturo
+        * Hace una consulta UPDATE a una tabla y asigna los valores a un registro con el id seleccionado.
+        * Sirve para todas las tablas menos para la de Auto.
+        * Ejemplo: UPDATE Proveedor SET Nombre='Jose Rodriguez',Direccion='Niño Artillero',Telefono='444123541' WHERE idProveedor = 10
+        * Formato: UPDATE tableName SET values WHERE idtableName = id
+        * string tableName - Nombre de la tabla.
+        * string id - Identificador del registro.
+        * string values - Valores a asignar, Nombre del atributo igualado a su valor a asignar separados por ","
+        * y las cadenas entre comillas simples.
+        * */
         public void UpdateSet(string tableName, string id, string values)
         {
-            string query = "UPDATE " + tableName + " SET " + values + " WHERE id_" + tableName + "=" + id;
+            string query = string.Format("UPDATE {0} SET {1} WHERE id{2} = {3}", tableName, values, tableName, id);
             connection.Open();
             command = new OleDbCommand(query, connection);
             command.ExecuteNonQuery();
             connection.Close();
         }
 
-        public DataTable Refresh(string tableName)
+        /**
+        * Enriquez Capetillo Gerardo Arturo
+        * Hace una consulta SELECT a una tabla y con un criterio en especifico y regresa una tabla con 
+        * la informacion sacada por la consulta.
+        * Ejemplo : SELECT Nombre, Direccion FROM Cliente
+        * Formato: SELECT attribute FROM tableName
+        * string tableName - Nombre de la tabla.
+        * string attribute - Atributos separados por una ","
+        * return - Tabla con la informacion de la consulta.
+        * */
+        public DataTable Refresh(string tableName, string attribute)
         {
             DataTable table;
-            string query = "SELECT * FROM " + tableName;
+            string query = string.Format("SELECT {0} FROM {1}", attribute, tableName);
             connection.Open();
             command = new OleDbCommand(query, connection);
             adapter = new OleDbDataAdapter(command);
