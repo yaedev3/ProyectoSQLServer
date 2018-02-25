@@ -9,3 +9,17 @@ C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.pdb
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormBuy.resources
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekCar.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe.config
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.pdb
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csprojResolveAssemblyReference.cache
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Form1.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormBuy.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekCar.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\Pantallas_VentaAutos.FormSeekClient.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\Pantallas_VentaAutos.FormSeekSupplier.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Properties.Resources.resources
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csproj.GenerateResource.Cache
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csproj.CoreCompileInputs.cache
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.exe
+C:\Users\JesúsAlejandro\Desktop\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.pdb
