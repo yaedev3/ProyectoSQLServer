@@ -7,3 +7,5 @@ C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csproj.GenerateResource.Cache
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.exe
 C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.pdb
+C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormBuy.resources
+C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekCar.resources

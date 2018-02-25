@@ -102,5 +102,29 @@ namespace ProyectoSQLServer
             connection.Close();
             return table;
         }
+
+        /**
+       * Enriquez Capetillo Gerardo Arturo
+       * Hace una consulta SELECT a una tabla y con un criterio en especifico y regresa una tabla con 
+       * la informacion sacada por la consulta ademas contiene restricciones hechas por WHERE
+       * Ejemplo : SELECT Nombre, Direccion FROM Cliente WHERE idCliente = 100 AND Nombre = 'Juan Lopez'
+       * Formato: SELECT attribute FROM tableName WHERE where
+       * string tableName - Nombre de la tabla.
+       * string attribute - Atributos separados por una ","
+       * return - Tabla con la informacion de la consulta.
+       * string where - Condiciones para restriccion de datos, cada condicion debe ir separa por un AND 
+       * */
+        public DataTable Refresh(string tableName, string attribute, string where)
+        {
+            DataTable table;
+            string query = string.Format("SELECT {0} FROM {1} WHERE {2}", attribute, tableName, where);
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            adapter = new OleDbDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            connection.Close();
+            return table;
+        }
     }
 }
