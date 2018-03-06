@@ -59,7 +59,9 @@ namespace ProyectoSQLServer
          * */
         private void buttonSupplierSeek_Click(object sender, EventArgs e)
         {
+            FormSeekSupplier SeekSup = new FormSeekSupplier();
 
+            SeekSup.Show();
         }
     }
 }

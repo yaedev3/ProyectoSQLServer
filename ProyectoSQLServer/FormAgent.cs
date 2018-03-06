@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ProyectoSQLServer
@@ -19,7 +12,7 @@ namespace ProyectoSQLServer
         public FormAgent()
         {
             InitializeComponent();
-            connection = new DatabaseConnection(@"DESKTOP-91T9VRR\SQLEXPRESS", "databasecar");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
             dataGridViewAgent.DataSource = connection.Refresh(tableName, "*");
             propertyFormAgent();
         }

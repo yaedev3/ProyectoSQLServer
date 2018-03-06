@@ -9,9 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace Pantallas_VentaAutos
+namespace ProyectoSQLServer
 {
-
     /*
 
         Búsqueda de Clientes

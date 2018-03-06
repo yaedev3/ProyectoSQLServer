@@ -26,6 +26,11 @@ namespace ProyectoSQLServer
             connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server + ";Database=" + database + ";Trusted_Connection=yes");
         }
 
+        internal int login(string text1, string text2)
+        {
+            throw new NotImplementedException();
+        }
+
         /**
          * Hace una consulta INSERT INTO a una tabla 
          * Ejemplo: INSERT INTO Cliente (Nombre,Domicilio,Telefono,Ocupacion) VALUES ('Juan Perez','Himno Nacional','8281545','Estudiante')

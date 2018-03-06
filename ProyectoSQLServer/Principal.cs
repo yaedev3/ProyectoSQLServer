@@ -24,12 +24,14 @@ namespace ProyectoSQLServer
 
         private void Venta_Auto(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara la ventana de venta del auto");
+
         }
 
         private void Compra_Auto(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara la ventana de compra del auto");
+            FormBuy buy = new FormBuy();
+
+            buy.Show();
 
         }
 
@@ -40,7 +42,8 @@ namespace ProyectoSQLServer
 
         private void Empleado(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara la ventana de el empleado");
+            FormAgent agent = new FormAgent();
+            agent.Show();
 
         }
 

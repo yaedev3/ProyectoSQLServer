@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
-namespace Pantallas_VentaAutos
+namespace ProyectoSQLServer
 {
 
     /*
@@ -48,7 +48,7 @@ namespace Pantallas_VentaAutos
 
         public void updateDataGrid()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=RAFA\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=GATEWAY-NE\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
 
             con.Open();
             if (con.State != ConnectionState.Open) { return; }
@@ -69,7 +69,7 @@ namespace Pantallas_VentaAutos
 
         private void bSeek_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=RAFA\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=GATEWAY-NE\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
 
             con.Open();
             if (con.State != ConnectionState.Open) { return; }

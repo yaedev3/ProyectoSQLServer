@@ -1,4 +1,4 @@
-﻿namespace Pantallas_VentaAutos
+﻿namespace ProyectoSQLServer
 {
     partial class FormSeekClient
     {
