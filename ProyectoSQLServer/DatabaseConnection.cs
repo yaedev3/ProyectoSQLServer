@@ -65,6 +65,15 @@ namespace ProyectoSQLServer
             connection.Close();
         }
 
+        public void DeleteFromAuto(string tableName, string key ,string id)
+        {
+            string query = string.Format("DELETE FROM {0} WHERE {1} = '{2}'", tableName, key, id);
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
         /**
         * Enriquez Capetillo Gerardo Arturo
         * Hace una consulta UPDATE a una tabla y asigna los valores a un registro con el id seleccionado.
@@ -79,6 +88,15 @@ namespace ProyectoSQLServer
         public void UpdateSet(string tableName, string id, string values)
         {
             string query = string.Format("UPDATE {0} SET {1} WHERE id{2} = {3}", tableName, values, tableName, id);
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
+
+        public void UpdateSetAuto(string tableName, string key ,string id, string values)
+        {
+            string query = string.Format("UPDATE {0} SET {1} WHERE {2} = '{3}'", tableName, values, key, id);
             connection.Open();
             command = new OleDbCommand(query, connection);
             command.ExecuteNonQuery();

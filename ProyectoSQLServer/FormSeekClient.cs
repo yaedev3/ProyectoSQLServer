@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
 
@@ -47,7 +41,7 @@ namespace ProyectoSQLServer
 
         public void updateDataGrid()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=RAFA\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
             con.Open();
             if (con.State != ConnectionState.Open) { return; }
@@ -68,7 +62,7 @@ namespace ProyectoSQLServer
 
         private void bSeek_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=RAFA\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
             con.Open();
             if (con.State != ConnectionState.Open) { return; }

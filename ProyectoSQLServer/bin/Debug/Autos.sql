@@ -19,6 +19,9 @@ CREATE TABLE Auto (
     PrecioVenta FLOAT NOT NULL,
     CONSTRAINT PK_NoSerie PRIMARY KEY(NoSerie)
 );
+
+INSERT INTO Auto (NoSerie,Nombre,Marca,Modelo,PrecioFabrica,PrecioVenta) VALUES ('1575skdjrn75asdwr','Tsuru','Nissan','2017', 105500.00, 135000.00)
+
 CREATE TABLE Agente (
     idAgente BIGINT NOT NULL IDENTITY(1,1),
     Nombre VARCHAR(25) NOT NULL, 

@@ -48,7 +48,7 @@ namespace ProyectoSQLServer
 
         public void updateDataGrid()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=GATEWAY-NE\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
             con.Open();
             if (con.State != ConnectionState.Open) { return; }

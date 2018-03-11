@@ -24,7 +24,9 @@ namespace ProyectoSQLServer
 
         private void Venta_Auto(object sender, EventArgs e)
         {
+            FormAddSale addSale = new FormAddSale();
 
+            addSale.Show();
         }
 
         private void Compra_Auto(object sender, EventArgs e)
@@ -37,7 +39,11 @@ namespace ProyectoSQLServer
 
         private void Inventario_Auto(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara ventana de el inventario");
+            //MessageBox.Show("Aqui estara ventana de el inventario");
+            FormViewDataCar auto = new FormViewDataCar();
+
+            auto.Show();
+
         }
 
         private void Empleado(object sender, EventArgs e)
@@ -49,13 +55,18 @@ namespace ProyectoSQLServer
 
         private void Proveedores_auto(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara la ventana de los proveedores");
+            //MessageBox.Show("Aqui estara la ventana de los proveedores");
+            FormViewAddSupplier form = new FormViewAddSupplier();
+            form.Show();
 
         }
 
         private void Cliente(object sender, EventArgs e)
         {
-            MessageBox.Show("Aqui estara la venta de el cliente");
+           // MessageBox.Show("Aqui estara la venta de el cliente");
+            FormClient client = new FormClient();
+
+            client.Show();
 
         }
     }
