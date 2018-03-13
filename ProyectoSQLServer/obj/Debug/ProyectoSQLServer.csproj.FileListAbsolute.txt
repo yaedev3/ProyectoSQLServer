@@ -61,3 +61,23 @@ C:\Users\Casa\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Pr
 C:\Users\Casa\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csproj.GenerateResource.Cache
 C:\Users\Casa\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormAddSale.resources
 C:\Users\Casa\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormViewAddSupplier.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe.config
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.exe
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.pdb
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.pdb
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csprojResolveAssemblyReference.cache
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Form1.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormAddSale.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormAgent.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormBuy.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormClient.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekCar.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekClient.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormSeekSupplier.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormViewAddSupplier.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.FormViewDataCar.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.login.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Principal.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.Properties.Resources.resources
+C:\Users\Rafa\Documents\Visual Studio 2015\Projects\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csproj.GenerateResource.Cache

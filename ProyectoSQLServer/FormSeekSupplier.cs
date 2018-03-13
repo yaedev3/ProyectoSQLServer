@@ -25,12 +25,13 @@ namespace ProyectoSQLServer
     
     public partial class FormSeekSupplier : Form
     {
-
+        private DatabaseConnection connection;
         // Al iniciar la pantalla, se muestra la lista con todos los proveedores.
 
         public FormSeekSupplier()
         {
             InitializeComponent();
+            connection = new DatabaseConnection("", "");
             updateDataGrid();
         }
 
@@ -48,20 +49,20 @@ namespace ProyectoSQLServer
 
         public void updateDataGrid()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
+            //OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
-            con.Open();
-            if (con.State != ConnectionState.Open) { return; }
+            //con.Open();
+            //if (con.State != ConnectionState.Open) { return; }
 
-            OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Proveedor", con);
-            OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+            //OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Proveedor", con);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(command);
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
 
-            dgvSuppliers.DataSource = table;
+            dgvSuppliers.DataSource = connection.Refresh("dbo.Proveedor", "*"); ;
 
-            con.Close();
+            //con.Close();
         }
 
         // Evento accionado por el click en el botón de búsqueda.
@@ -69,20 +70,20 @@ namespace ProyectoSQLServer
 
         private void bSeek_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=GATEWAY-NE\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
+            //OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=GATEWAY-NE\SQLEXPRESS;Database=databasecar;Trusted_Connection=yes;");
 
-            con.Open();
-            if (con.State != ConnectionState.Open) { return; }
+            //con.Open();
+            //if (con.State != ConnectionState.Open) { return; }
 
-            OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Proveedor WHERE Nombre='" + tbName.Text + "'", con);
-            OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+            //OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Proveedor WHERE Nombre='" + tbName.Text + "'", con);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(command);
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
 
-            dgvSuppliers.DataSource = table;
+            dgvSuppliers.DataSource = connection.Refresh("dbo.Proveedor", "*", string.Format("Nombre='{0}'", tbName.Text)); ;
 
-            con.Close();
+            //con.Close();
         }
     }
 }
