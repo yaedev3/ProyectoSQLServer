@@ -31,7 +31,7 @@
             this.tbName = new System.Windows.Forms.TextBox();
             this.lName = new System.Windows.Forms.Label();
             this.dgvClients = new System.Windows.Forms.DataGridView();
-            this.bSeek = new System.Windows.Forms.Button();
+            this.bDone = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,38 +56,44 @@
             // dgvClients
             // 
             this.dgvClients.AllowUserToAddRows = false;
-            this.dgvClients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.dgvClients.AllowUserToDeleteRows = false;
+            this.dgvClients.AllowUserToResizeColumns = false;
+            this.dgvClients.AllowUserToResizeRows = false;
+            this.dgvClients.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvClients.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvClients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvClients.Location = new System.Drawing.Point(15, 53);
+            this.dgvClients.MultiSelect = false;
             this.dgvClients.Name = "dgvClients";
             this.dgvClients.ReadOnly = true;
+            this.dgvClients.RowHeadersVisible = false;
+            this.dgvClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvClients.Size = new System.Drawing.Size(405, 215);
             this.dgvClients.TabIndex = 2;
+            this.dgvClients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvClients_CellClick);
             // 
-            // bSeek
+            // bDone
             // 
-            this.bSeek.Enabled = false;
-            this.bSeek.Location = new System.Drawing.Point(345, 13);
-            this.bSeek.Name = "bSeek";
-            this.bSeek.Size = new System.Drawing.Size(75, 23);
-            this.bSeek.TabIndex = 3;
-            this.bSeek.Text = "Buscar";
-            this.bSeek.UseVisualStyleBackColor = true;
-            this.bSeek.Click += new System.EventHandler(this.bSeek_Click);
+            this.bDone.Location = new System.Drawing.Point(345, 13);
+            this.bDone.Name = "bDone";
+            this.bDone.Size = new System.Drawing.Size(75, 23);
+            this.bDone.TabIndex = 3;
+            this.bDone.Text = "Aceptar";
+            this.bDone.UseVisualStyleBackColor = true;
+            this.bDone.Click += new System.EventHandler(this.bSeek_Click);
             // 
-            // Form1
+            // FormSeekClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 280);
-            this.Controls.Add(this.bSeek);
+            this.Controls.Add(this.bDone);
             this.Controls.Add(this.dgvClients);
             this.Controls.Add(this.lName);
             this.Controls.Add(this.tbName);
-            this.Name = "Form1";
+            this.Name = "FormSeekClient";
             this.Text = "Búsqueda de Clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dgvClients)).EndInit();
             this.ResumeLayout(false);
@@ -100,7 +106,7 @@
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.Label lName;
         private System.Windows.Forms.DataGridView dgvClients;
-        private System.Windows.Forms.Button bSeek;
+        private System.Windows.Forms.Button bDone;
     }
 }
 

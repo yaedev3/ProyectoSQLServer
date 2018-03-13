@@ -12,6 +12,8 @@ namespace ProyectoSQLServer
 {
     public partial class FormAddSale : Form
     {
+        private string idClient;
+
         public FormAddSale()
         {
             InitializeComponent();
@@ -20,13 +22,22 @@ namespace ProyectoSQLServer
         private void buttonSClient_Click(object sender, EventArgs e)
         {
             FormSeekClient form = new FormSeekClient();
+            form.AccessFeatures += CliFeatures;
             form.Show();
+        }
+
+        private void CliFeatures(string name, string adddress, string phone, string id)
+        {
+            labelClientName.Text = "Nombre: " + name;
+            labelAddress.Text = "Domicilio: " + adddress;
+            labelPhone.Text = "Telefono: " + phone;
+            idClient = id;
         }
 
         private void buttonSAuto_Click(object sender, EventArgs e)
         {
             FormSeekCar form = new FormSeekCar();
-            form.AccessFeatures += Features;
+            form.AccessFeatures += CarFeatures;
             form.Show();
         }
 
@@ -34,7 +45,7 @@ namespace ProyectoSQLServer
          * Enriquez Capetillo Gerardo Arturo
          * Metodo del delegado para asginar las caracteristicas del auto.
          * */
-        private void Features(string serial, string name, string brand, string model, string price)
+        private void CarFeatures(string serial, string name, string brand, string model, string price)
         {
             labelSerialNumber.Text = "Numero de serie: " + serial;
             labelCarName.Text = "Nombre: " + name;

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.OleDb;
+using System.Windows.Forms;
 
 namespace ProyectoSQLServer
 {
@@ -150,6 +151,32 @@ namespace ProyectoSQLServer
             adapter.Fill(table);
             connection.Close();
             return table;
+        }
+
+        public string GetId(string tableName, string attribute, string where)
+        {
+            DataGridView dg = new DataGridView();
+            string answer = "-1";
+            DataTable table;
+            string query = string.Format("SELECT {0} FROM {1} WHERE {2}", attribute, tableName, where);
+
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            adapter = new OleDbDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            connection.Close();
+            dg.DataSource = table;
+            try
+            {
+                answer = dg.Rows[0].Cells[0].Value.ToString();
+            }
+            catch
+            {
+
+            }
+            connection.Close();
+            return answer;
         }
     }
 }

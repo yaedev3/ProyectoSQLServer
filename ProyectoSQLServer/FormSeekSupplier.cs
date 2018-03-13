@@ -85,5 +85,14 @@ namespace ProyectoSQLServer
 
             //con.Close();
         }
+
+        private void dgvSuppliers_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //serialNumber = dataGridViewCars.SelectedRows[0].Cells[0].Value.ToString();
+            //name = dataGridViewCars.SelectedRows[0].Cells[1].Value.ToString();
+            //brand = dataGridViewCars.SelectedRows[0].Cells[2].Value.ToString();
+            //model = dataGridViewCars.SelectedRows[0].Cells[3].Value.ToString();
+            //price = dataGridViewCars.SelectedRows[0].Cells[4].Value.ToString();
+        }
     }
 }
