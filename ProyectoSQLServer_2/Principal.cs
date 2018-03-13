@@ -12,11 +12,11 @@ namespace ProyectoSQLServer
 {
     public partial class Principal : Form
     {
+
         /**
        *  Moreno Sabás Mayra Karina
        * Constructor de la pagina principal 
        * */
-
         public Principal()
         {
             InitializeComponent();

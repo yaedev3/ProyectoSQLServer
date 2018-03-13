@@ -23,9 +23,7 @@ namespace ProyectoSQLServer
          * */
         public DatabaseConnection(string server, string database)
         {
-            string server_aux = @"RAFA\SQLEXPRESS";
-            string database_aux = "databasecar";
-            connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server_aux + ";Database=" + database_aux + ";Trusted_Connection=yes");
+            connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server + ";Database=" + database + ";Trusted_Connection=yes");
         }
 
         internal int login(string text1, string text2)

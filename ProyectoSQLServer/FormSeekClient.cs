@@ -20,11 +20,14 @@ namespace ProyectoSQLServer
     {
 
         // Al iniciar la pantalla, se muestra la lista con todos los clientes.
+        private DatabaseConnection connection;
 
         public FormSeekClient()
         {
             InitializeComponent();
+            connection = new DatabaseConnection("", "");
             updateDataGrid();
+
         }
 
         // Método para evitar que el botón de búsqueda sea presionado con el campo de nombre vacío.
@@ -41,20 +44,20 @@ namespace ProyectoSQLServer
 
         public void updateDataGrid()
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
+            //OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
-            con.Open();
-            if (con.State != ConnectionState.Open) { return; }
+            //con.Open();
+            //if (con.State != ConnectionState.Open) { return; }
 
-            OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Cliente", con);
-            OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+            //OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Cliente", con);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(command);
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
 
-            dgvClients.DataSource = table;
+            dgvClients.DataSource = connection.Refresh("dbo.Cliente", "*");
 
-            con.Close();
+/*            con.Close()*/;
         }
 
         // Evento accionado por el click en el botón de búsqueda.
@@ -62,20 +65,20 @@ namespace ProyectoSQLServer
 
         private void bSeek_Click(object sender, EventArgs e)
         {
-            OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
+            //OleDbConnection con = new OleDbConnection(@"Provider=SQLNCLI11;Server=CASA-PC;Database=databasecar;Trusted_Connection=yes;");
 
-            con.Open();
-            if (con.State != ConnectionState.Open) { return; }
+            //con.Open();
+            //if (con.State != ConnectionState.Open) { return; }
 
-            OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Cliente WHERE Nombre='" + tbName.Text + "'", con);
-            OleDbDataAdapter adapter = new OleDbDataAdapter(command);
+            //OleDbCommand command = new OleDbCommand("SELECT * FROM dbo.Cliente WHERE Nombre='" + tbName.Text + "'", con);
+            //OleDbDataAdapter adapter = new OleDbDataAdapter(command);
 
-            DataTable table = new DataTable();
-            adapter.Fill(table);
+            //DataTable table = new DataTable();
+            //adapter.Fill(table);
 
-            dgvClients.DataSource = table;
+            dgvClients.DataSource = connection.Refresh("dbo.Cliente", "*", string.Format("Nombre='{0}'",tbName.Text));
 
-            con.Close();
+            //con.Close();
         }
     }
 }
