@@ -51,7 +51,7 @@
             // numericUpSalary
             // 
             this.numericUpSalary.DecimalPlaces = 4;
-            this.numericUpSalary.Location = new System.Drawing.Point(86, 101);
+            this.numericUpSalary.Location = new System.Drawing.Point(86, 63);
             this.numericUpSalary.Maximum = new decimal(new int[] {
             200000,
             0,
@@ -59,113 +59,113 @@
             0});
             this.numericUpSalary.Name = "numericUpSalary";
             this.numericUpSalary.Size = new System.Drawing.Size(120, 20);
-            this.numericUpSalary.TabIndex = 45;
+            this.numericUpSalary.TabIndex = 2;
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(290, 178);
+            this.buttonDelete.Location = new System.Drawing.Point(296, 70);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(158, 23);
             this.buttonDelete.TabIndex = 44;
-            this.buttonDelete.Text = "ELIMINAR";
+            this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonModify
             // 
-            this.buttonModify.Location = new System.Drawing.Point(290, 121);
+            this.buttonModify.Location = new System.Drawing.Point(296, 41);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(158, 23);
             this.buttonModify.TabIndex = 43;
-            this.buttonModify.Text = "MODIFICAR";
+            this.buttonModify.Text = "Modificar";
             this.buttonModify.UseVisualStyleBackColor = true;
             this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(290, 60);
+            this.buttonInsert.Location = new System.Drawing.Point(296, 12);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(158, 23);
             this.buttonInsert.TabIndex = 42;
-            this.buttonInsert.Text = "INSERTAR";
+            this.buttonInsert.Text = "Insertar";
             this.buttonInsert.UseVisualStyleBackColor = true;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Location = new System.Drawing.Point(86, 221);
+            this.textBoxEmail.Location = new System.Drawing.Point(86, 147);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(151, 20);
-            this.textBoxEmail.TabIndex = 41;
+            this.textBoxEmail.Size = new System.Drawing.Size(181, 20);
+            this.textBoxEmail.TabIndex = 5;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(86, 180);
+            this.textBoxPhone.Location = new System.Drawing.Point(86, 121);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPhone.TabIndex = 40;
+            this.textBoxPhone.Size = new System.Drawing.Size(181, 20);
+            this.textBoxPhone.TabIndex = 4;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(86, 139);
+            this.textBoxAddress.Location = new System.Drawing.Point(86, 89);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(181, 20);
-            this.textBoxAddress.TabIndex = 39;
+            this.textBoxAddress.TabIndex = 3;
             // 
             // textBoxRFCAgent
             // 
-            this.textBoxRFCAgent.Location = new System.Drawing.Point(86, 57);
+            this.textBoxRFCAgent.Location = new System.Drawing.Point(86, 32);
             this.textBoxRFCAgent.Name = "textBoxRFCAgent";
             this.textBoxRFCAgent.Size = new System.Drawing.Size(181, 20);
-            this.textBoxRFCAgent.TabIndex = 38;
+            this.textBoxRFCAgent.TabIndex = 1;
             // 
             // textBoxNameAgent
             // 
-            this.textBoxNameAgent.Location = new System.Drawing.Point(86, 19);
+            this.textBoxNameAgent.Location = new System.Drawing.Point(86, 6);
             this.textBoxNameAgent.Name = "textBoxNameAgent";
             this.textBoxNameAgent.Size = new System.Drawing.Size(181, 20);
-            this.textBoxNameAgent.TabIndex = 37;
+            this.textBoxNameAgent.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 224);
+            this.label6.Location = new System.Drawing.Point(12, 150);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 13);
+            this.label6.Size = new System.Drawing.Size(35, 13);
             this.label6.TabIndex = 36;
-            this.label6.Text = "EMAIL";
+            this.label6.Text = "E-mail";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(15, 183);
+            this.label5.Location = new System.Drawing.Point(11, 126);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 13);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 35;
-            this.label5.Text = "CELULAR";
+            this.label5.Text = "Teléfono";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(15, 142);
+            this.label4.Location = new System.Drawing.Point(11, 92);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 34;
-            this.label4.Text = "DOMICILIO";
+            this.label4.Text = "Domicilio";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 101);
+            this.label3.Location = new System.Drawing.Point(11, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(39, 13);
             this.label3.TabIndex = 33;
-            this.label3.Text = "SALARIO";
+            this.label3.Text = "Salario";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 60);
+            this.label2.Location = new System.Drawing.Point(12, 35);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 13);
             this.label2.TabIndex = 32;
@@ -174,18 +174,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 22);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 31;
-            this.label1.Text = "NOMBRE";
+            this.label1.Text = "Nombre";
             // 
             // dataGridViewAgent
             // 
             this.dataGridViewAgent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewAgent.Location = new System.Drawing.Point(15, 280);
+            this.dataGridViewAgent.Location = new System.Drawing.Point(12, 173);
             this.dataGridViewAgent.Name = "dataGridViewAgent";
-            this.dataGridViewAgent.Size = new System.Drawing.Size(436, 166);
+            this.dataGridViewAgent.RowHeadersVisible = false;
+            this.dataGridViewAgent.Size = new System.Drawing.Size(442, 166);
             this.dataGridViewAgent.TabIndex = 30;
             this.dataGridViewAgent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAgent_CellClick);
             // 
@@ -193,7 +194,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 465);
+            this.ClientSize = new System.Drawing.Size(466, 348);
             this.Controls.Add(this.numericUpSalary);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonModify);
