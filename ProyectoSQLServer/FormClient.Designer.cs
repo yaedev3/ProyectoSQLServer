@@ -45,103 +45,104 @@
             // 
             // buttonDelete
             // 
-            this.buttonDelete.Location = new System.Drawing.Point(292, 118);
+            this.buttonDelete.Location = new System.Drawing.Point(290, 74);
             this.buttonDelete.Name = "buttonDelete";
             this.buttonDelete.Size = new System.Drawing.Size(158, 23);
             this.buttonDelete.TabIndex = 56;
-            this.buttonDelete.Text = "ELIMINAR";
+            this.buttonDelete.Text = "Eliminar";
             this.buttonDelete.UseVisualStyleBackColor = true;
             this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
             // 
             // buttonModify
             // 
-            this.buttonModify.Location = new System.Drawing.Point(292, 76);
+            this.buttonModify.Location = new System.Drawing.Point(290, 45);
             this.buttonModify.Name = "buttonModify";
             this.buttonModify.Size = new System.Drawing.Size(158, 23);
             this.buttonModify.TabIndex = 55;
-            this.buttonModify.Text = "MODIFICAR";
+            this.buttonModify.Text = "Modificar";
             this.buttonModify.UseVisualStyleBackColor = true;
             this.buttonModify.Click += new System.EventHandler(this.buttonModify_Click);
             // 
             // buttonInsert
             // 
-            this.buttonInsert.Location = new System.Drawing.Point(292, 32);
+            this.buttonInsert.Location = new System.Drawing.Point(290, 16);
             this.buttonInsert.Name = "buttonInsert";
             this.buttonInsert.Size = new System.Drawing.Size(158, 23);
             this.buttonInsert.TabIndex = 54;
-            this.buttonInsert.Text = "INSERTAR";
+            this.buttonInsert.Text = "Insertar";
             this.buttonInsert.UseVisualStyleBackColor = true;
             this.buttonInsert.Click += new System.EventHandler(this.buttonInsert_Click);
             // 
             // textBoxOcupation
             // 
-            this.textBoxOcupation.Location = new System.Drawing.Point(85, 139);
+            this.textBoxOcupation.Location = new System.Drawing.Point(85, 94);
             this.textBoxOcupation.Name = "textBoxOcupation";
             this.textBoxOcupation.Size = new System.Drawing.Size(181, 20);
-            this.textBoxOcupation.TabIndex = 53;
+            this.textBoxOcupation.TabIndex = 3;
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Location = new System.Drawing.Point(85, 98);
+            this.textBoxPhone.Location = new System.Drawing.Point(85, 68);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(181, 20);
-            this.textBoxPhone.TabIndex = 52;
+            this.textBoxPhone.TabIndex = 2;
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Location = new System.Drawing.Point(85, 57);
+            this.textBoxAddress.Location = new System.Drawing.Point(85, 42);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(181, 20);
-            this.textBoxAddress.TabIndex = 51;
+            this.textBoxAddress.TabIndex = 1;
             // 
             // textBoxNameClient
             // 
             this.textBoxNameClient.Location = new System.Drawing.Point(85, 16);
             this.textBoxNameClient.Name = "textBoxNameClient";
             this.textBoxNameClient.Size = new System.Drawing.Size(181, 20);
-            this.textBoxNameClient.TabIndex = 50;
+            this.textBoxNameClient.TabIndex = 0;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(11, 142);
+            this.label6.Location = new System.Drawing.Point(12, 97);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(70, 13);
+            this.label6.Size = new System.Drawing.Size(59, 13);
             this.label6.TabIndex = 49;
-            this.label6.Text = "OCUPACIÓN";
+            this.label6.Text = "Ocupación";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(11, 101);
+            this.label5.Location = new System.Drawing.Point(12, 71);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 13);
+            this.label5.Size = new System.Drawing.Size(49, 13);
             this.label5.TabIndex = 48;
-            this.label5.Text = "TELEFONO\r\n";
+            this.label5.Text = "Teléfono";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 60);
+            this.label4.Location = new System.Drawing.Point(12, 45);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 13);
+            this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 47;
-            this.label4.Text = "DOMICILIO";
+            this.label4.Text = "Domicilio";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 19);
+            this.label1.Location = new System.Drawing.Point(12, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.Size = new System.Drawing.Size(44, 13);
             this.label1.TabIndex = 46;
-            this.label1.Text = "NOMBRE";
+            this.label1.Text = "Nombre";
             // 
             // dataGridViewClient
             // 
             this.dataGridViewClient.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewClient.Location = new System.Drawing.Point(17, 179);
+            this.dataGridViewClient.Location = new System.Drawing.Point(15, 120);
             this.dataGridViewClient.Name = "dataGridViewClient";
+            this.dataGridViewClient.RowHeadersVisible = false;
             this.dataGridViewClient.Size = new System.Drawing.Size(436, 166);
             this.dataGridViewClient.TabIndex = 45;
             this.dataGridViewClient.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewClient_CellClick);
@@ -150,7 +151,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 360);
+            this.ClientSize = new System.Drawing.Size(460, 295);
             this.Controls.Add(this.buttonDelete);
             this.Controls.Add(this.buttonModify);
             this.Controls.Add(this.buttonInsert);
