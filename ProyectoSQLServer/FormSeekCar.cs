@@ -10,11 +10,13 @@ using System.Windows.Forms;
 
 namespace ProyectoSQLServer
 {
+    public delegate void GetCarFeatures(string serial, string name, string brand, string model, string price);
     public partial class FormSeekCar : Form
     {
         private DatabaseConnection connection;
-        private string serieNumber, name, brand, model, price;
+        private string serialNumber, name, brand, model, price;
         private string nameQuery, brandQuery, modelQuery, query;
+        private GetCarFeatures car;
 
         /**
          * Enriquez Capetillo Gerardo Arturo
@@ -33,7 +35,7 @@ namespace ProyectoSQLServer
         * */
         private void dataGridViewCars_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            serieNumber = dataGridViewCars.SelectedRows[0].Cells[0].Value.ToString();
+            serialNumber = dataGridViewCars.SelectedRows[0].Cells[0].Value.ToString();
             name = dataGridViewCars.SelectedRows[0].Cells[1].Value.ToString();
             brand = dataGridViewCars.SelectedRows[0].Cells[2].Value.ToString();
             model = dataGridViewCars.SelectedRows[0].Cells[3].Value.ToString();
@@ -105,7 +107,11 @@ namespace ProyectoSQLServer
          * */
         private void buttonDone_Click(object sender, EventArgs e)
         {
-            if (!name.Equals("")) ;
+            if (!name.Equals(""))
+            {
+                car(serialNumber, name, brand, model, price);
+                this.Close();
+            }
         }
 
         /**
@@ -126,6 +132,22 @@ namespace ProyectoSQLServer
             this.dataGridViewCars.DataSource = connection.Refresh("Auto", "NoSerie,Nombre,Marca,Modelo,PrecioVenta", query);
             for (int j = 0; j < dataGridViewCars.Columns.Count; j++)
                 dataGridViewCars.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+        }
+
+        /**
+         * Enriquez Capetillo Gerardo Arturo
+         * Metodo de acceso para las caracteristicas del auto.
+         * */
+        public GetCarFeatures AccessFeatures
+        {
+            get
+            {
+                return car;
+            }
+            set
+            {
+                car = value;
+            }
         }
     }
 }
