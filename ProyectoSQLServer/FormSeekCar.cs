@@ -23,7 +23,7 @@ namespace ProyectoSQLServer
         public FormSeekCar()
         {
             InitializeComponent();
-            nameQuery = brandQuery = modelQuery = "";            
+            name = nameQuery = brandQuery = modelQuery = "";            
         }
 
         /**
@@ -65,7 +65,8 @@ namespace ProyectoSQLServer
         private void fillComboBox(ComboBox box, int index)
         {
             foreach (DataGridViewRow row in dataGridViewCars.Rows)
-                box.Items.Add(row.Cells[index].Value.ToString());
+                if (!box.Items.Contains(row.Cells[index].Value.ToString()))
+                    box.Items.Add(row.Cells[index].Value.ToString());
         }
 
         /**
