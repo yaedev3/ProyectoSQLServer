@@ -19,16 +19,16 @@ namespace ProyectoSQLServer
         {
             InitializeComponent();
             connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
-            dataGridViewDataCar.DataSource = connection.Refresh(tableName, "*");
+            dataGridViewDataCar.DataSource = connection.RefreshAutoVista();
         }
 
         private void dataGridViewDataCar_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxSerialNumber.Text = dataGridViewDataCar[0, e.RowIndex].Value.ToString();
-            textBoxName.Text = dataGridViewDataCar[1, e.RowIndex].Value.ToString();
-            textBoxBrand.Text = dataGridViewDataCar[2, e.RowIndex].Value.ToString();
-            textBoxModel.Text = dataGridViewDataCar[3, e.RowIndex].Value.ToString();
-            numericBuyPrice.Value = (decimal)Convert.ToSingle(dataGridViewDataCar[4, e.RowIndex].Value.ToString());
+            textBoxSerialNumber.Text = dataGridViewDataCar[5, e.RowIndex].Value.ToString();
+            textBoxName.Text = dataGridViewDataCar[2, e.RowIndex].Value.ToString();
+            textBoxBrand.Text = dataGridViewDataCar[1, e.RowIndex].Value.ToString();
+            textBoxModel.Text = dataGridViewDataCar[0, e.RowIndex].Value.ToString();
+            numericBuyPrice.Value = (decimal)Convert.ToSingle(dataGridViewDataCar[3, e.RowIndex].Value.ToString());
         }
 
         private bool verify_Fields()
@@ -75,15 +75,16 @@ namespace ProyectoSQLServer
                     textBoxSerialNumber.Text, textBoxName.Text, textBoxBrand.Text, textBoxModel.Text, numericBuyPrice.Value);
 
                 connection.UpdateSetAuto(tableName, "NoSerie", textBoxSerialNumber.Text, values);
-                dataGridViewDataCar.DataSource = connection.Refresh(tableName, "*");
+                dataGridViewDataCar.DataSource = connection.RefreshAutoVista();
             }
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)
         {
-            connection.DeleteFromAuto(tableName,"NoSerie",textBoxSerialNumber.Text);
+            //connection.DeleteFromAuto(tableName,"NoSerie",textBoxSerialNumber.Text);
+            connection.UpdateSetAuto("Instancia_Auto", "NoSerie", textBoxSerialNumber.Text, "0");
             clearRow();
-            dataGridViewDataCar.DataSource = connection.Refresh(tableName, "*");
+            dataGridViewDataCar.DataSource = connection.RefreshAutoVista();
         }
 
         private void clearRow()

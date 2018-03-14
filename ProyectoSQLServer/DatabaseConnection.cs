@@ -99,7 +99,7 @@ namespace ProyectoSQLServer
 
         public void UpdateSetAuto(string tableName, string key ,string id, string values)
         {
-            string query = string.Format("UPDATE {0} SET {1} WHERE {2} = '{3}'", tableName, values, key, id);
+            string query = string.Format("UPDATE {0} SET Bandera = {1} WHERE {2} = '{3}'", tableName, values, key, id);
             connection.Open();
             command = new OleDbCommand(query, connection);
             command.ExecuteNonQuery();
@@ -135,6 +135,21 @@ namespace ProyectoSQLServer
             string query = "SELECT Instancia_Auto.NoSerie, Auto.Nombre, Auto.Marca, Auto.Modelo, Instancia_Auto.PrecioVenta " +
                 "FROM Auto " +
                 "INNER JOIN Instancia_Auto ON Auto.IdAuto = Instancia_Auto.IdAuto";
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            adapter = new OleDbDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            connection.Close();
+            return table;
+        }
+
+        public DataTable RefreshAutoVista()
+        {
+            DataTable table;
+            string query = "SELECT Modelo, Marca, Nombre, PrecioFabrica, Cantidad, NoSerie, PrecioVenta, Bandera " +
+                "FROM Auto " +
+                "FULL OUTER JOIN Instancia_Auto ON Instancia_Auto.IdAuto = Auto.IdAuto; ";
             connection.Open();
             command = new OleDbCommand(query, connection);
             adapter = new OleDbDataAdapter(command);
