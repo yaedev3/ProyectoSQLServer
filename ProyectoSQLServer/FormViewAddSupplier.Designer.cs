@@ -48,6 +48,7 @@
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(80, 12);
+            this.textBoxName.MaxLength = 25;
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(197, 20);
             this.textBoxName.TabIndex = 0;
@@ -55,6 +56,7 @@
             // textBoxPhone
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(80, 38);
+            this.textBoxPhone.MaxLength = 15;
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(197, 20);
             this.textBoxPhone.TabIndex = 1;
@@ -62,6 +64,7 @@
             // textBoxResidency
             // 
             this.textBoxResidency.Location = new System.Drawing.Point(80, 64);
+            this.textBoxResidency.MaxLength = 25;
             this.textBoxResidency.Name = "textBoxResidency";
             this.textBoxResidency.Size = new System.Drawing.Size(197, 20);
             this.textBoxResidency.TabIndex = 2;
@@ -69,6 +72,7 @@
             // textBoxBusinessName
             // 
             this.textBoxBusinessName.Location = new System.Drawing.Point(80, 90);
+            this.textBoxBusinessName.MaxLength = 25;
             this.textBoxBusinessName.Name = "textBoxBusinessName";
             this.textBoxBusinessName.Size = new System.Drawing.Size(197, 20);
             this.textBoxBusinessName.TabIndex = 3;
@@ -76,6 +80,7 @@
             // textBoxEmail
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(80, 116);
+            this.textBoxEmail.MaxLength = 25;
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(197, 20);
             this.textBoxEmail.TabIndex = 4;
@@ -187,7 +192,7 @@
             this.Controls.Add(this.textBoxPhone);
             this.Controls.Add(this.textBoxName);
             this.Name = "FormViewAddSupplier";
-            this.Text = "FormViewAddSupplier";
+            this.Text = "Provedores";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSuppliers)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

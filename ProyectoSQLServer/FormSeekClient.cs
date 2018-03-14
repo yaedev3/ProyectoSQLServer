@@ -27,8 +27,8 @@ namespace ProyectoSQLServer
         public FormSeekClient()
         {
             InitializeComponent();
-            connection = new DatabaseConnection("", "");
-            dgvClients.DataSource = connection.Refresh("dbo.Cliente", "Nombre,Domicilio,Telefono");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
+            dgvClients.DataSource = connection.Refresh("Cliente", "Nombre,Domicilio,Telefono");
             id = name = address = phone = "";
         }
 
@@ -36,7 +36,7 @@ namespace ProyectoSQLServer
 
         private void tbName_TextChanged(object sender, EventArgs e)
         {
-            dgvClients.DataSource = connection.Refresh("dbo.Cliente", "Nombre,Domicilio,Telefono", string.Format("Nombre='{0}*'", tbName.Text));
+            dgvClients.DataSource = connection.Refresh("Cliente", "Nombre,Domicilio,Telefono", string.Format("Nombre='{0}*'", tbName.Text));
         }
 
         private void dgvClients_CellClick(object sender, DataGridViewCellEventArgs e)

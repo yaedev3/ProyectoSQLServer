@@ -27,11 +27,13 @@ namespace ProyectoSQLServer
     {
         private DatabaseConnection connection;
         // Al iniciar la pantalla, se muestra la lista con todos los proveedores.
+        private List<string> datos;
 
         public FormSeekSupplier()
         {
             InitializeComponent();
-            connection = new DatabaseConnection("", "");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
+            datos = new List<string>();
             updateDataGrid();
         }
 
@@ -86,13 +88,29 @@ namespace ProyectoSQLServer
             //con.Close();
         }
 
+        public List<string> get_data()
+        {
+            return datos;
+        }
+
         private void dgvSuppliers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            datos.Add(dgvSuppliers[0, e.RowIndex].Value.ToString());
+            datos.Add(dgvSuppliers[1, e.RowIndex].Value.ToString());
+            datos.Add(dgvSuppliers[4, e.RowIndex].Value.ToString());
+            datos.Add(dgvSuppliers[2, e.RowIndex].Value.ToString());
+
             //serialNumber = dataGridViewCars.SelectedRows[0].Cells[0].Value.ToString();
             //name = dataGridViewCars.SelectedRows[0].Cells[1].Value.ToString();
             //brand = dataGridViewCars.SelectedRows[0].Cells[2].Value.ToString();
             //model = dataGridViewCars.SelectedRows[0].Cells[3].Value.ToString();
             //price = dataGridViewCars.SelectedRows[0].Cells[4].Value.ToString();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
+
         }
     }
 }

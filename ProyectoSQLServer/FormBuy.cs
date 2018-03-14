@@ -22,7 +22,7 @@ namespace ProyectoSQLServer
         public FormBuy()
         {
             InitializeComponent();
-            connection = new DatabaseConnection(@"DESKTOP-Q77ELOA\SQLEXPRESS", "databasecar");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
             textBoxCarBrand.MaxLength = textBoxCarModel.MaxLength = textBoxCarName.MaxLength = 25;
             textBoxCarSerialNumber.MaxLength = 17;
         }
@@ -61,7 +61,16 @@ namespace ProyectoSQLServer
         {
             FormSeekSupplier SeekSup = new FormSeekSupplier();
 
-            SeekSup.Show();
+            SeekSup.ShowDialog();
+
+            List<string> datos = SeekSup.get_data();
+            if (datos != null)
+            {
+                idSupplier = datos[0];
+                labelSupplierName.Text += datos[1];
+                labelSupplierBusinessName.Text += datos[2];
+                labelPhone.Text += datos[3];
+            }
         }
     }
 }

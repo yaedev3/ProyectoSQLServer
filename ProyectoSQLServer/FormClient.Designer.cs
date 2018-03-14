@@ -97,6 +97,7 @@
             // textBoxNameClient
             // 
             this.textBoxNameClient.Location = new System.Drawing.Point(85, 16);
+            this.textBoxNameClient.MaxLength = 30;
             this.textBoxNameClient.Name = "textBoxNameClient";
             this.textBoxNameClient.Size = new System.Drawing.Size(181, 20);
             this.textBoxNameClient.TabIndex = 0;
@@ -165,7 +166,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridViewClient);
             this.Name = "FormClient";
-            this.Text = "FormClient";
+            this.Text = "Registro de clientes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClient)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -18,7 +18,7 @@ namespace ProyectoSQLServer
 
         public FormClient()
         {
-            InitializeComponent(); connection = new DatabaseConnection(@"DESKTOP-91T9VRR\SQLEXPRESS", "databasecar");
+            InitializeComponent(); connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
             dataGridViewClient.DataSource = connection.Refresh(tableName, "*");
             propertyFormAgent();
 

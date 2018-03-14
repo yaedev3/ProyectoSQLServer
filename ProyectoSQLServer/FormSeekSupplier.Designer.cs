@@ -32,6 +32,7 @@
             this.lName = new System.Windows.Forms.Label();
             this.tbName = new System.Windows.Forms.TextBox();
             this.dgvSuppliers = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuppliers)).BeginInit();
             this.SuspendLayout();
             // 
@@ -74,20 +75,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvSuppliers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvSuppliers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSuppliers.Location = new System.Drawing.Point(15, 53);
+            this.dgvSuppliers.Location = new System.Drawing.Point(15, 69);
             this.dgvSuppliers.MultiSelect = false;
             this.dgvSuppliers.Name = "dgvSuppliers";
             this.dgvSuppliers.ReadOnly = true;
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSuppliers.Size = new System.Drawing.Size(405, 215);
+            this.dgvSuppliers.Size = new System.Drawing.Size(405, 199);
             this.dgvSuppliers.TabIndex = 7;
             this.dgvSuppliers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuppliers_CellClick);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(345, 40);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 8;
+            this.button1.Text = "Aceptar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormSeekSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(435, 280);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvSuppliers);
             this.Controls.Add(this.bSeek);
             this.Controls.Add(this.lName);
@@ -107,5 +119,6 @@
         private System.Windows.Forms.Label lName;
         private System.Windows.Forms.TextBox tbName;
         private System.Windows.Forms.DataGridView dgvSuppliers;
+        private System.Windows.Forms.Button button1;
     }
 }

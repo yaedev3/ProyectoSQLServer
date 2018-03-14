@@ -49,8 +49,9 @@ namespace ProyectoSQLServer
          * */
         private void FormSeekCar_Load(object sender, EventArgs e)
         {
-            connection = new DatabaseConnection(@"CASA-PC", "databasecar");
-            this.dataGridViewCars.DataSource = connection.Refresh("Auto", "NoSerie,Nombre,Marca,Modelo,PrecioVenta");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
+            //this.dataGridViewCars.DataSource = connection.Refresh("Auto", "NoSerie,Nombre,Marca,Modelo,PrecioVenta");
+            this.dataGridViewCars.DataSource = connection.RefreshAuto();
             fillComboBox(comboBoxName, 1);
             fillComboBox(comboBoxBrand, 2);
             fillComboBox(comboBoxModel, 3);

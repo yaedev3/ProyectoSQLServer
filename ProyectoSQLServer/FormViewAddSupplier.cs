@@ -20,7 +20,7 @@ namespace ProyectoSQLServer
         {
             InitializeComponent();
 
-            connection = new DatabaseConnection(@"CASA-PC", "databasecar");
+            connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
             dataGridViewSuppliers.DataSource = connection.Refresh(tableName, "*");
         }
 
