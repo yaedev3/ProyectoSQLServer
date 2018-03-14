@@ -144,21 +144,6 @@ namespace ProyectoSQLServer
             return table;
         }
 
-        public DataTable RefreshAutoVista()
-        {
-            DataTable table;
-            string query = "SELECT Modelo, Marca, Nombre, PrecioFabrica, Cantidad, NoSerie, PrecioVenta, Bandera " +
-                "FROM Auto " +
-                "FULL OUTER JOIN Instancia_Auto ON Instancia_Auto.IdAuto = Auto.IdAuto; ";
-            connection.Open();
-            command = new OleDbCommand(query, connection);
-            adapter = new OleDbDataAdapter(command);
-            table = new DataTable();
-            adapter.Fill(table);
-            connection.Close();
-            return table;
-        }
-
         /**
        * Enriquez Capetillo Gerardo Arturo
        * Hace una consulta SELECT a una tabla y con un criterio en especifico y regresa una tabla con 
@@ -196,6 +181,21 @@ namespace ProyectoSQLServer
 
             }
             return answer;
+        }
+
+        public DataTable RefreshAutoVista()
+        {
+            DataTable table;
+            string query = "SELECT Modelo, Marca, Nombre, PrecioFabrica, Cantidad, NoSerie, PrecioVenta, Bandera " +
+                "FROM Auto " +
+                "FULL OUTER JOIN Instancia_Auto ON Instancia_Auto.IdAuto = Auto.IdAuto; ";
+            connection.Open();
+            command = new OleDbCommand(query, connection);
+            adapter = new OleDbDataAdapter(command);
+            table = new DataTable();
+            adapter.Fill(table);
+            connection.Close();
+            return table;
         }
     }
 }
