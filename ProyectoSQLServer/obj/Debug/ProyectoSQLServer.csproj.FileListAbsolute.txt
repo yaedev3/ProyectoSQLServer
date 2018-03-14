@@ -141,3 +141,4 @@ C:\Users\JesúsAlejandro\Desktop\betaFinal\ProyectoSQLServer\obj\Debug\ProyectoS
 C:\Users\JesúsAlejandro\Desktop\betaFinal\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe.config
 C:\Users\JesúsAlejandro\Desktop\betaFinal\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.exe
 C:\Users\JesúsAlejandro\Desktop\betaFinal\ProyectoSQLServer\bin\Debug\ProyectoSQLServer.pdb
+C:\Users\jason\Dropbox1\Dropbox\UASLP\8 Semestre\Admin Bases de datos\Programas\ProyectoSQLServer\ProyectoSQLServer\ProyectoSQLServer\obj\Debug\ProyectoSQLServer.csprojResolveAssemblyReference.cache

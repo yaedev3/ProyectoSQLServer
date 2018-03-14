@@ -24,7 +24,7 @@ namespace ProyectoSQLServer
          * */
         public DatabaseConnection(string server, string database)
         {
-            string server_aux = @"GATEWAY-NE\SQLEXPRESS";
+            string server_aux = @"DESKTOP-Q77ELOA\SQLEXPRESS";
             string database_aux = "databasecar";
             connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server_aux + ";Database=" + database_aux + ";Trusted_Connection=yes");
         }
@@ -170,27 +170,16 @@ namespace ProyectoSQLServer
 
         public string GetId(string tableName, string attribute, string where)
         {
-            DataGridView dg = new DataGridView();
             string answer = "-1";
-            DataTable table;
-            string query = string.Format("SELECT {0} FROM {1} WHERE {2}", attribute, tableName, where);
 
-            connection.Open();
-            command = new OleDbCommand(query, connection);
-            adapter = new OleDbDataAdapter(command);
-            table = new DataTable();
-            adapter.Fill(table);
-            connection.Close();
-            dg.DataSource = table;
             try
             {
-                answer = dg.Rows[0].Cells[0].Value.ToString();
+                answer = this.Refresh(tableName, attribute, where).Rows[0][0].ToString();
             }
             catch
             {
 
             }
-            connection.Close();
             return answer;
         }
     }

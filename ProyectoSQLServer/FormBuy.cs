@@ -34,13 +34,16 @@ namespace ProyectoSQLServer
          * */
         private void buttonAccept_Click(object sender, EventArgs e)
         {
+            string idCar = "";
             if (textBoxCarBrand.Text.Equals("") || textBoxCarModel.Text.Equals("") || textBoxCarName.Text.Equals("") || textBoxCarSerialNumber.Text.Equals("") || numericUpDownCarPrice.Value == 0)
                 MessageBox.Show("No puedes dejar campos en blanco", "Error");
             else
             {
-                //connection.InsertInto("Compra",)
-                //INSERT INTO Auto VALUES (textBoxCarSerialNumber,textBoxCarName,textBoxCarBrand,textBoxCarModel,numericUpDownCarPrice,NULL);
-                //INSERT INTO Compra (idProveedor,idAgente,NoSerie,FechaCompra) VALUES (idSupplier,idUser,textBoxCarSerialNumber,CurrentDate);
+                if (connection.GetId("Auto", "*", string.Format("Modelo='{0}' AND Marca='{1}' AND Nombre = '{2}'", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text)).Equals("-1"))
+                    connection.InsertInto("Auto", "Modelo,Nombre,Marca,PrecioFabrica,Cantidad", string.Format("'{0}','{1}','{2}',{3},0", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text, numericUpDownCarPrice.Value));
+                idCar = connection.GetId("Auto", "*", string.Format("Modelo='{0}' AND Marca='{1}' AND Nombre = '{2}'", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text));
+                connection.InsertInto("Instancia_Auto", "NoSerie,IdAuto,Bandera", string.Format("'{0}',{1},1", textBoxCarSerialNumber.Text, idCar));
+                connection.InsertInto("Compra", "idProveedor,idAgente,NoSerie")
             }
         }
 

@@ -79,6 +79,7 @@
             this.dgvSuppliers.MultiSelect = false;
             this.dgvSuppliers.Name = "dgvSuppliers";
             this.dgvSuppliers.ReadOnly = true;
+            this.dgvSuppliers.RowHeadersVisible = false;
             this.dgvSuppliers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvSuppliers.Size = new System.Drawing.Size(405, 199);
             this.dgvSuppliers.TabIndex = 7;

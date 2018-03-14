@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormBuy));
             this.labelSupplier = new System.Windows.Forms.Label();
             this.labelSupplierName = new System.Windows.Forms.Label();
             this.labelSupplierBusinessName = new System.Windows.Forms.Label();
@@ -194,11 +193,11 @@
             // 
             // buttonSupplierSeek
             // 
-            this.buttonSupplierSeek.Image = ((System.Drawing.Image)(resources.GetObject("buttonSupplierSeek.Image")));
             this.buttonSupplierSeek.Location = new System.Drawing.Point(74, 3);
             this.buttonSupplierSeek.Name = "buttonSupplierSeek";
-            this.buttonSupplierSeek.Size = new System.Drawing.Size(28, 24);
+            this.buttonSupplierSeek.Size = new System.Drawing.Size(79, 24);
             this.buttonSupplierSeek.TabIndex = 1;
+            this.buttonSupplierSeek.Text = "Seleccionar";
             this.buttonSupplierSeek.UseVisualStyleBackColor = true;
             this.buttonSupplierSeek.Click += new System.EventHandler(this.buttonSupplierSeek_Click);
             // 

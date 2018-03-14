@@ -44,7 +44,7 @@ namespace ProyectoSQLServer
             name = dgvClients.SelectedRows[0].Cells[0].Value.ToString();
             address = dgvClients.SelectedRows[0].Cells[1].Value.ToString();
             phone = dgvClients.SelectedRows[0].Cells[2].Value.ToString();
-            id = connection.GetId("Cliente", "idCliente", string.Format("Nombre='{0}' AND Domicilio='{1}' AND Telefono='{2}'", name, address, phone));
+            id = connection.GetId("Cliente", "*", string.Format("Nombre='{0}' AND Domicilio='{1}' AND Telefono='{2}'", name, address, phone));
         }
 
         // Evento accionado por el click en el botón de búsqueda.
