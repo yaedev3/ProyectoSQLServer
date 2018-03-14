@@ -100,11 +100,6 @@ namespace ProyectoSQLServer
             datos.Add(dgvSuppliers[4, e.RowIndex].Value.ToString());
             datos.Add(dgvSuppliers[2, e.RowIndex].Value.ToString());
 
-            //serialNumber = dataGridViewCars.SelectedRows[0].Cells[0].Value.ToString();
-            //name = dataGridViewCars.SelectedRows[0].Cells[1].Value.ToString();
-            //brand = dataGridViewCars.SelectedRows[0].Cells[2].Value.ToString();
-            //model = dataGridViewCars.SelectedRows[0].Cells[3].Value.ToString();
-            //price = dataGridViewCars.SelectedRows[0].Cells[4].Value.ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)

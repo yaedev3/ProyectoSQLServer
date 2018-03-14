@@ -37,7 +37,6 @@
             this.textBoxName = new System.Windows.Forms.TextBox();
             this.textBoxBrand = new System.Windows.Forms.TextBox();
             this.textBoxModel = new System.Windows.Forms.TextBox();
-            this.buttonEdit = new System.Windows.Forms.Button();
             this.buttonDelete = new System.Windows.Forms.Button();
             this.dataGridViewDataCar = new System.Windows.Forms.DataGridView();
             this.numericBuyPrice = new System.Windows.Forms.NumericUpDown();
@@ -119,16 +118,6 @@
             this.textBoxModel.Size = new System.Drawing.Size(194, 20);
             this.textBoxModel.TabIndex = 8;
             // 
-            // buttonEdit
-            // 
-            this.buttonEdit.Location = new System.Drawing.Point(341, 67);
-            this.buttonEdit.Name = "buttonEdit";
-            this.buttonEdit.Size = new System.Drawing.Size(75, 23);
-            this.buttonEdit.TabIndex = 10;
-            this.buttonEdit.Text = "Modificar";
-            this.buttonEdit.UseVisualStyleBackColor = true;
-            this.buttonEdit.Click += new System.EventHandler(this.buttonEdit_Click);
-            // 
             // buttonDelete
             // 
             this.buttonDelete.Location = new System.Drawing.Point(341, 109);
@@ -147,6 +136,7 @@
             this.dataGridViewDataCar.Location = new System.Drawing.Point(12, 154);
             this.dataGridViewDataCar.Name = "dataGridViewDataCar";
             this.dataGridViewDataCar.ReadOnly = true;
+            this.dataGridViewDataCar.RowHeadersVisible = false;
             this.dataGridViewDataCar.Size = new System.Drawing.Size(449, 169);
             this.dataGridViewDataCar.TabIndex = 12;
             this.dataGridViewDataCar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDataCar_CellClick);
@@ -171,7 +161,6 @@
             this.Controls.Add(this.numericBuyPrice);
             this.Controls.Add(this.dataGridViewDataCar);
             this.Controls.Add(this.buttonDelete);
-            this.Controls.Add(this.buttonEdit);
             this.Controls.Add(this.textBoxModel);
             this.Controls.Add(this.textBoxBrand);
             this.Controls.Add(this.textBoxName);
@@ -182,7 +171,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormViewDataCar";
-            this.Text = "FormViewDataCar";
+            this.Text = "Carros";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDataCar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericBuyPrice)).EndInit();
             this.ResumeLayout(false);
@@ -201,7 +190,6 @@
         private System.Windows.Forms.TextBox textBoxName;
         private System.Windows.Forms.TextBox textBoxBrand;
         private System.Windows.Forms.TextBox textBoxModel;
-        private System.Windows.Forms.Button buttonEdit;
         private System.Windows.Forms.Button buttonDelete;
         private System.Windows.Forms.DataGridView dataGridViewDataCar;
         private System.Windows.Forms.NumericUpDown numericBuyPrice;
