@@ -112,11 +112,14 @@ namespace ProyectoSQLServer
 
         private void dataGridViewClient_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxNameClient.Text = dataGridViewClient[1, e.RowIndex].Value.ToString();
-            textBoxAddress.Text = dataGridViewClient[2, e.RowIndex].Value.ToString();
-            textBoxPhone.Text = dataGridViewClient[3, e.RowIndex].Value.ToString();
-            textBoxOcupation.Text = dataGridViewClient[4, e.RowIndex].Value.ToString();
-            idClient = Convert.ToInt32(dataGridViewClient[0, e.RowIndex].Value.ToString());
+            if(e.RowIndex != -1)
+            {
+                textBoxNameClient.Text = dataGridViewClient[1, e.RowIndex].Value.ToString();
+                textBoxAddress.Text = dataGridViewClient[2, e.RowIndex].Value.ToString();
+                textBoxPhone.Text = dataGridViewClient[3, e.RowIndex].Value.ToString();
+                textBoxOcupation.Text = dataGridViewClient[4, e.RowIndex].Value.ToString();
+                idClient = Convert.ToInt32(dataGridViewClient[0, e.RowIndex].Value.ToString());
+            }            
         }
     }
 }

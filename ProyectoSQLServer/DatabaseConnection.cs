@@ -29,6 +29,13 @@ namespace ProyectoSQLServer
             connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server_aux + ";Database=" + database_aux + ";Trusted_Connection=yes");
         }
 
+        public DatabaseConnection()
+        {
+            string server_aux = @"DESKTOP-Q77ELOA\SQLEXPRESS";
+            string database_aux = "databasecar";
+            connection = new OleDbConnection(@"Provider=SQLNCLI11;Server=" + server_aux + ";Database=" + database_aux + ";Trusted_Connection=yes");
+        }
+
         internal int login(string text1, string text2)
         {
             throw new NotImplementedException();
@@ -129,12 +136,9 @@ namespace ProyectoSQLServer
             return table;
         }
 
-        public DataTable RefreshAuto()
+        public DataTable RefreshAuto(string query)
         {
             DataTable table;
-            string query = "SELECT Instancia_Auto.NoSerie, Auto.Nombre, Auto.Marca, Auto.Modelo, Instancia_Auto.PrecioVenta " +
-                "FROM Auto " +
-                "INNER JOIN Instancia_Auto ON Auto.IdAuto = Instancia_Auto.IdAuto";
             connection.Open();
             command = new OleDbCommand(query, connection);
             adapter = new OleDbDataAdapter(command);

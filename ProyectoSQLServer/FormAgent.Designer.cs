@@ -50,7 +50,7 @@
             // 
             // numericUpSalary
             // 
-            this.numericUpSalary.DecimalPlaces = 4;
+            this.numericUpSalary.DecimalPlaces = 2;
             this.numericUpSalary.Location = new System.Drawing.Point(86, 63);
             this.numericUpSalary.Maximum = new decimal(new int[] {
             200000,
@@ -182,10 +182,17 @@
             // 
             // dataGridViewAgent
             // 
+            this.dataGridViewAgent.AllowUserToAddRows = false;
+            this.dataGridViewAgent.AllowUserToDeleteRows = false;
+            this.dataGridViewAgent.AllowUserToOrderColumns = true;
+            this.dataGridViewAgent.AllowUserToResizeColumns = false;
+            this.dataGridViewAgent.AllowUserToResizeRows = false;
             this.dataGridViewAgent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewAgent.Location = new System.Drawing.Point(12, 173);
             this.dataGridViewAgent.Name = "dataGridViewAgent";
+            this.dataGridViewAgent.ReadOnly = true;
             this.dataGridViewAgent.RowHeadersVisible = false;
+            this.dataGridViewAgent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewAgent.Size = new System.Drawing.Size(442, 166);
             this.dataGridViewAgent.TabIndex = 30;
             this.dataGridViewAgent.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewAgent_CellClick);

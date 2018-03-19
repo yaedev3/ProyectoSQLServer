@@ -203,6 +203,7 @@
             // 
             // numericUpDownCarPrice
             // 
+            this.numericUpDownCarPrice.DecimalPlaces = 2;
             this.numericUpDownCarPrice.Location = new System.Drawing.Point(78, 207);
             this.numericUpDownCarPrice.Maximum = new decimal(new int[] {
             99999999,

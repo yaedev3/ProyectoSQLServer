@@ -51,7 +51,9 @@ namespace ProyectoSQLServer
         {
             connection = new DatabaseConnection(@"GATEWAY-NE\SQLEXPRESS", "databasecar");
             //this.dataGridViewCars.DataSource = connection.Refresh("Auto", "NoSerie,Nombre,Marca,Modelo,PrecioVenta");
-            this.dataGridViewCars.DataSource = connection.RefreshAuto();
+            query = "SELECT Instancia_Auto.NoSerie, Auto.Nombre, Auto.Marca, Auto.Modelo, Instancia_Auto.PrecioVenta FROM Auto"+
+                " INNER JOIN Instancia_Auto ON Auto.IdAuto = Instancia_Auto.IdAuto WHERE Instancia_Auto.Bandera = 1";
+            this.dataGridViewCars.DataSource = connection.RefreshAuto(query);
             fillComboBox(comboBoxName, 1);
             fillComboBox(comboBoxBrand, 2);
             fillComboBox(comboBoxModel, 3);
@@ -122,15 +124,15 @@ namespace ProyectoSQLServer
          * */
         private void makeQuery()
         {
-            query = "";
+            string subquery = "";
             if (!nameQuery.Equals(""))
-                query += string.Format("Nombre = '{0}' AND ", nameQuery);
+                subquery += string.Format("Nombre = '{0}' AND ", nameQuery);
             if (!brandQuery.Equals(""))
-                query += string.Format("Marca = '{0}' AND ", brandQuery);
+                subquery += string.Format("Marca = '{0}' AND ", brandQuery);
             if (!modelQuery.Equals(""))
-                query += string.Format("Modelo = '{0}' AND ", modelQuery);
-            query = query.Remove(query.Length - 5, 4);
-            this.dataGridViewCars.DataSource = connection.Refresh("Auto", "NoSerie,Nombre,Marca,Modelo,PrecioVenta", query);
+                subquery += string.Format("Modelo = '{0}' AND ", modelQuery);
+            subquery = subquery.Remove(subquery.Length - 5, 4);
+            this.dataGridViewCars.DataSource = connection.RefreshAuto(query + " AND " + subquery);
             for (int j = 0; j < dataGridViewCars.Columns.Count; j++)
                 dataGridViewCars.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
         }

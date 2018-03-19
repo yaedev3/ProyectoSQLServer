@@ -110,13 +110,16 @@ namespace ProyectoSQLServer
 
         private void dataGridViewAgent_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            textBoxNameAgent.Text = dataGridViewAgent[1, e.RowIndex].Value.ToString();
-            textBoxRFCAgent.Text = dataGridViewAgent[2, e.RowIndex].Value.ToString();
-            numericUpSalary.Value = (decimal)Convert.ToSingle(dataGridViewAgent[3, e.RowIndex].Value.ToString());
-            textBoxAddress.Text = dataGridViewAgent[4, e.RowIndex].Value.ToString();
-            textBoxPhone.Text = dataGridViewAgent[5, e.RowIndex].Value.ToString();
-            textBoxEmail.Text = dataGridViewAgent[6, e.RowIndex].Value.ToString();
-            idAgente = Convert.ToInt32(dataGridViewAgent[0, e.RowIndex].Value.ToString());
+            if(e.RowIndex != -1)
+            {
+                textBoxNameAgent.Text = dataGridViewAgent[1, e.RowIndex].Value.ToString();
+                textBoxRFCAgent.Text = dataGridViewAgent[2, e.RowIndex].Value.ToString();
+                numericUpSalary.Value = (decimal)Convert.ToSingle(dataGridViewAgent[3, e.RowIndex].Value.ToString());
+                textBoxAddress.Text = dataGridViewAgent[4, e.RowIndex].Value.ToString();
+                textBoxPhone.Text = dataGridViewAgent[5, e.RowIndex].Value.ToString();
+                textBoxEmail.Text = dataGridViewAgent[6, e.RowIndex].Value.ToString();
+                idAgente = Convert.ToInt32(dataGridViewAgent[0, e.RowIndex].Value.ToString());
+            }
         }
     }
 }

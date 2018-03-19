@@ -96,27 +96,34 @@
             this.textBoxSerialNumber.ReadOnly = true;
             this.textBoxSerialNumber.Size = new System.Drawing.Size(194, 20);
             this.textBoxSerialNumber.TabIndex = 5;
+            this.textBoxSerialNumber.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxName
             // 
             this.textBoxName.Location = new System.Drawing.Point(85, 38);
             this.textBoxName.Name = "textBoxName";
+            this.textBoxName.ReadOnly = true;
             this.textBoxName.Size = new System.Drawing.Size(194, 20);
             this.textBoxName.TabIndex = 6;
+            this.textBoxName.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxBrand
             // 
             this.textBoxBrand.Location = new System.Drawing.Point(85, 64);
             this.textBoxBrand.Name = "textBoxBrand";
+            this.textBoxBrand.ReadOnly = true;
             this.textBoxBrand.Size = new System.Drawing.Size(194, 20);
             this.textBoxBrand.TabIndex = 7;
+            this.textBoxBrand.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxModel
             // 
             this.textBoxModel.Location = new System.Drawing.Point(85, 90);
             this.textBoxModel.Name = "textBoxModel";
+            this.textBoxModel.ReadOnly = true;
             this.textBoxModel.Size = new System.Drawing.Size(194, 20);
             this.textBoxModel.TabIndex = 8;
+            this.textBoxModel.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // buttonDelete
             // 
@@ -134,15 +141,18 @@
             this.dataGridViewDataCar.AllowUserToDeleteRows = false;
             this.dataGridViewDataCar.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDataCar.Location = new System.Drawing.Point(12, 154);
+            this.dataGridViewDataCar.MultiSelect = false;
             this.dataGridViewDataCar.Name = "dataGridViewDataCar";
             this.dataGridViewDataCar.ReadOnly = true;
             this.dataGridViewDataCar.RowHeadersVisible = false;
+            this.dataGridViewDataCar.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDataCar.Size = new System.Drawing.Size(449, 169);
             this.dataGridViewDataCar.TabIndex = 12;
             this.dataGridViewDataCar.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDataCar_CellClick);
             // 
             // numericBuyPrice
             // 
+            this.numericBuyPrice.DecimalPlaces = 2;
             this.numericBuyPrice.Location = new System.Drawing.Point(85, 117);
             this.numericBuyPrice.Maximum = new decimal(new int[] {
             1000000,
@@ -150,8 +160,10 @@
             0,
             0});
             this.numericBuyPrice.Name = "numericBuyPrice";
+            this.numericBuyPrice.ReadOnly = true;
             this.numericBuyPrice.Size = new System.Drawing.Size(193, 20);
             this.numericBuyPrice.TabIndex = 13;
+            this.numericBuyPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FormViewDataCar
             // 

@@ -39,7 +39,6 @@
             this.labelCarName = new System.Windows.Forms.Label();
             this.labelBrand = new System.Windows.Forms.Label();
             this.labelModel = new System.Windows.Forms.Label();
-            this.labelPrice = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxPaymentType = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,11 +49,10 @@
             this.groupBoxCredit = new System.Windows.Forms.GroupBox();
             this.buttonAdd = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.numericFinalPrice = new System.Windows.Forms.NumericUpDown();
+            this.textBoxFinalPrice = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.numericStartingAmount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericExhibitions)).BeginInit();
             this.groupBoxCredit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFinalPrice)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -158,19 +156,10 @@
             this.labelModel.TabIndex = 19;
             this.labelModel.Text = "Modelo:";
             // 
-            // labelPrice
-            // 
-            this.labelPrice.AutoSize = true;
-            this.labelPrice.Location = new System.Drawing.Point(89, 108);
-            this.labelPrice.Name = "labelPrice";
-            this.labelPrice.Size = new System.Drawing.Size(40, 13);
-            this.labelPrice.TabIndex = 20;
-            this.labelPrice.Text = "Precio:";
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(15, 136);
+            this.label3.Location = new System.Drawing.Point(15, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 13);
             this.label3.TabIndex = 7;
@@ -178,10 +167,11 @@
             // 
             // comboBoxPaymentType
             // 
+            this.comboBoxPaymentType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPaymentType.Items.AddRange(new object[] {
             "Contado",
             "Credito"});
-            this.comboBoxPaymentType.Location = new System.Drawing.Point(91, 133);
+            this.comboBoxPaymentType.Location = new System.Drawing.Point(92, 116);
             this.comboBoxPaymentType.Name = "comboBoxPaymentType";
             this.comboBoxPaymentType.Size = new System.Drawing.Size(170, 21);
             this.comboBoxPaymentType.TabIndex = 2;
@@ -190,7 +180,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(23, 164);
+            this.label4.Location = new System.Drawing.Point(23, 147);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 13);
             this.label4.TabIndex = 8;
@@ -198,17 +188,45 @@
             // 
             // numericStartingAmount
             // 
+            this.numericStartingAmount.DecimalPlaces = 2;
+            this.numericStartingAmount.Increment = new decimal(new int[] {
+            5,
+            0,
+            0,
+            0});
             this.numericStartingAmount.Location = new System.Drawing.Point(132, 29);
+            this.numericStartingAmount.Maximum = new decimal(new int[] {
+            9999999,
+            0,
+            0,
+            0});
             this.numericStartingAmount.Name = "numericStartingAmount";
             this.numericStartingAmount.Size = new System.Drawing.Size(166, 20);
             this.numericStartingAmount.TabIndex = 0;
+            this.numericStartingAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // numericExhibitions
             // 
             this.numericExhibitions.Location = new System.Drawing.Point(132, 69);
+            this.numericExhibitions.Maximum = new decimal(new int[] {
+            24,
+            0,
+            0,
+            0});
+            this.numericExhibitions.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.numericExhibitions.Name = "numericExhibitions";
             this.numericExhibitions.Size = new System.Drawing.Size(166, 20);
             this.numericExhibitions.TabIndex = 1;
+            this.numericExhibitions.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.numericExhibitions.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // label5
             // 
@@ -235,7 +253,7 @@
             this.groupBoxCredit.Controls.Add(this.numericExhibitions);
             this.groupBoxCredit.Controls.Add(this.numericStartingAmount);
             this.groupBoxCredit.Enabled = false;
-            this.groupBoxCredit.Location = new System.Drawing.Point(49, 188);
+            this.groupBoxCredit.Location = new System.Drawing.Point(49, 171);
             this.groupBoxCredit.Name = "groupBoxCredit";
             this.groupBoxCredit.Size = new System.Drawing.Size(323, 116);
             this.groupBoxCredit.TabIndex = 4;
@@ -244,35 +262,39 @@
             // 
             // buttonAdd
             // 
-            this.buttonAdd.Location = new System.Drawing.Point(111, 320);
+            this.buttonAdd.Location = new System.Drawing.Point(111, 303);
             this.buttonAdd.Name = "buttonAdd";
             this.buttonAdd.Size = new System.Drawing.Size(75, 23);
             this.buttonAdd.TabIndex = 9;
             this.buttonAdd.Text = "Agregar";
             this.buttonAdd.UseVisualStyleBackColor = true;
+            this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
             // 
             // buttonCancel
             // 
-            this.buttonCancel.Location = new System.Drawing.Point(206, 320);
+            this.buttonCancel.Location = new System.Drawing.Point(206, 303);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(75, 23);
             this.buttonCancel.TabIndex = 10;
             this.buttonCancel.Text = "Cancelar";
             this.buttonCancel.UseVisualStyleBackColor = true;
+            this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // numericFinalPrice
+            // textBoxFinalPrice
             // 
-            this.numericFinalPrice.Location = new System.Drawing.Point(91, 162);
-            this.numericFinalPrice.Name = "numericFinalPrice";
-            this.numericFinalPrice.Size = new System.Drawing.Size(170, 20);
-            this.numericFinalPrice.TabIndex = 3;
+            this.textBoxFinalPrice.Location = new System.Drawing.Point(90, 147);
+            this.textBoxFinalPrice.Name = "textBoxFinalPrice";
+            this.textBoxFinalPrice.ReadOnly = true;
+            this.textBoxFinalPrice.Size = new System.Drawing.Size(171, 20);
+            this.textBoxFinalPrice.TabIndex = 21;
+            this.textBoxFinalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // FormAddSale
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(399, 355);
-            this.Controls.Add(this.labelPrice);
+            this.ClientSize = new System.Drawing.Size(399, 339);
+            this.Controls.Add(this.textBoxFinalPrice);
             this.Controls.Add(this.labelModel);
             this.Controls.Add(this.labelBrand);
             this.Controls.Add(this.labelCarName);
@@ -289,7 +311,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBoxCredit);
-            this.Controls.Add(this.numericFinalPrice);
             this.Controls.Add(this.comboBoxPaymentType);
             this.Name = "FormAddSale";
             this.Text = "Venta";
@@ -297,7 +318,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericExhibitions)).EndInit();
             this.groupBoxCredit.ResumeLayout(false);
             this.groupBoxCredit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericFinalPrice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,7 +335,6 @@
         private System.Windows.Forms.Label labelCarName;
         private System.Windows.Forms.Label labelBrand;
         private System.Windows.Forms.Label labelModel;
-        private System.Windows.Forms.Label labelPrice;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxPaymentType;
         private System.Windows.Forms.Label label4;
@@ -326,6 +345,6 @@
         private System.Windows.Forms.GroupBox groupBoxCredit;
         private System.Windows.Forms.Button buttonAdd;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.NumericUpDown numericFinalPrice;
+        private System.Windows.Forms.TextBox textBoxFinalPrice;
     }
 }

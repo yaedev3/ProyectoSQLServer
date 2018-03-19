@@ -13,7 +13,7 @@ namespace ProyectoSQLServer
     public partial class FormBuy : Form
     {
         private DatabaseConnection connection;
-        private string idSupplier, idUser;
+        private string idSupplier;
 
         /**
          * Enriquez Capetillo Gerardo Arturo
@@ -34,16 +34,18 @@ namespace ProyectoSQLServer
          * */
         private void buttonAccept_Click(object sender, EventArgs e)
         {
-            string idCar = "";
+            string idCar = "-1";
             if (textBoxCarBrand.Text.Equals("") || textBoxCarModel.Text.Equals("") || textBoxCarName.Text.Equals("") || textBoxCarSerialNumber.Text.Equals("") || numericUpDownCarPrice.Value == 0)
                 MessageBox.Show("No puedes dejar campos en blanco", "Error");
             else
             {
                 if (connection.GetId("Auto", "*", string.Format("Modelo='{0}' AND Marca='{1}' AND Nombre = '{2}'", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text)).Equals("-1"))
-                    connection.InsertInto("Auto", "Modelo,Nombre,Marca,PrecioFabrica,Cantidad", string.Format("'{0}','{1}','{2}',{3},0", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text, numericUpDownCarPrice.Value));
+                    connection.InsertInto("Auto", "Modelo,Nombre,Marca,PrecioFabrica,Cantidad", string.Format("'{0}','{1}','{2}',{3},0", textBoxCarModel.Text, textBoxCarName.Text, textBoxCarBrand.Text, numericUpDownCarPrice.Value));
                 idCar = connection.GetId("Auto", "*", string.Format("Modelo='{0}' AND Marca='{1}' AND Nombre = '{2}'", textBoxCarModel.Text, textBoxCarBrand.Text, textBoxCarName.Text));
                 connection.InsertInto("Instancia_Auto", "NoSerie,IdAuto,Bandera", string.Format("'{0}',{1},1", textBoxCarSerialNumber.Text, idCar));
-                connection.InsertInto("Compra", "idProveedor,idAgente,NoSerie", string.Format("{0},{1},{2}", idSupplier, 1, textBoxCarSerialNumber.Text));
+                connection.InsertInto("Compra", "idProveedor,idAgente,NoSerie", string.Format("{0},{1},'{2}'", idSupplier, 1, textBoxCarSerialNumber.Text));
+                MessageBox.Show("Se realizo la compra exitosamente");
+                this.Close();
             }
         }
 

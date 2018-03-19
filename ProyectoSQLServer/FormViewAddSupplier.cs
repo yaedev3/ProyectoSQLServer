@@ -76,12 +76,15 @@ namespace ProyectoSQLServer
 
         private void dataGridViewSuppliers_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            id = dataGridViewSuppliers[0, e.RowIndex].Value.ToString();
-            textBoxName.Text = dataGridViewSuppliers[1, e.RowIndex].Value.ToString();
-            textBoxPhone.Text = dataGridViewSuppliers[2, e.RowIndex].Value.ToString();
-            textBoxResidency.Text = dataGridViewSuppliers[3, e.RowIndex].Value.ToString();
-            textBoxBusinessName.Text = dataGridViewSuppliers[4, e.RowIndex].Value.ToString();
-            textBoxEmail.Text = dataGridViewSuppliers[5, e.RowIndex].Value.ToString();
+            if(e.RowIndex != -1)
+            {
+                id = dataGridViewSuppliers[0, e.RowIndex].Value.ToString();
+                textBoxName.Text = dataGridViewSuppliers[1, e.RowIndex].Value.ToString();
+                textBoxPhone.Text = dataGridViewSuppliers[2, e.RowIndex].Value.ToString();
+                textBoxResidency.Text = dataGridViewSuppliers[3, e.RowIndex].Value.ToString();
+                textBoxBusinessName.Text = dataGridViewSuppliers[4, e.RowIndex].Value.ToString();
+                textBoxEmail.Text = dataGridViewSuppliers[5, e.RowIndex].Value.ToString();
+            }
         }
 
         private void buttonModify_Click(object sender, EventArgs e)
