@@ -15,4 +15,3 @@ INSERT INTO Instancia_Auto (NoSerie,IdAuto,Bandera) VALUES ('1E2AA1S2D59E8W54S',
 INSERT INTO Instancia_Auto (NoSerie,IdAuto,Bandera) VALUES ('1E2AEAS2D59E8W54S',1,1);
 
 SELECT * FROM Instancia_Auto;
-DROP DATABASE databasecar;

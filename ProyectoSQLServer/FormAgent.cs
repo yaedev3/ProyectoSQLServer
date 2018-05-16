@@ -73,28 +73,42 @@ namespace ProyectoSQLServer
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            if (existEmptyFields() != true)
-            {
-                connection.InsertInto(tableName, "Nombre,RFC,Salario,Domicilio,Celular,Email", generateStringValue("INSERT"));
-                dataGridViewAgent.DataSource = connection.Refresh(tableName, "*");
-                cleanForm();
-            }
-            else
-                MessageBox.Show("Es Obligatorio llenar todos los campos");
-        }
-
-        private void buttonModify_Click(object sender, EventArgs e)
-        {
-            if (idAgente != -1)
+            try
             {
                 if (existEmptyFields() != true)
                 {
-                    connection.UpdateSet(tableName, idAgente.ToString(), generateStringValue("UPDATE"));
+                    connection.InsertInto(tableName, "Nombre,RFC,Salario,Domicilio,Celular,Email", generateStringValue("INSERT"));
                     dataGridViewAgent.DataSource = connection.Refresh(tableName, "*");
                     cleanForm();
                 }
                 else
-                    MessageBox.Show("Es OBLIGATORIO llenar todos los campos");
+                    MessageBox.Show("Es obligatorio llenar todos los campos");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("El RFC, E-mail y Telefono deben ser unicos \ny no se pueden repetir");
+            }
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idAgente != -1)
+                {
+                    if (existEmptyFields() != true)
+                    {
+                        connection.UpdateSet(tableName, idAgente.ToString(), generateStringValue("UPDATE"));
+                        dataGridViewAgent.DataSource = connection.Refresh(tableName, "*");
+                        cleanForm();
+                    }
+                    else
+                        MessageBox.Show("Es obligatorio llenar todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El RFC, E-mail y Telefono deben ser unicos \ny no se pueden repetir");
             }
         }
 

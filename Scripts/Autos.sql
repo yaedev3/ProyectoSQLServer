@@ -4,19 +4,19 @@ USE databasecar;
 /* TABLES */
 CREATE TABLE Proveedor (
     idProveedor BIGINT NOT NULL IDENTITY(1,1),
-    Nombre VARCHAR(25) NOT NULL,
-    Telefono VARCHAR(15) NOT NULL,
-    Domicilio VARCHAR(25) NOT NULL,
-    RazonSocial VARCHAR(25) NOT NULL,
-    Email VARCHAR(25) NOT NULL,
+    Nombre VARCHAR(50) NOT NULL,
+    Telefono VARCHAR(15) UNIQUE NOT NULL,
+    Domicilio VARCHAR(200) NOT NULL,
+    RazonSocial VARCHAR(50) NOT NULL,
+    Email VARCHAR(25) UNIQUE NOT NULL,
     CONSTRAINT PK_Proveedor PRIMARY KEY(idProveedor)
 );
 
 CREATE TABLE Auto(
 	IdAuto BIGINT IDENTITY(1,1) NOT NULL,
-	Modelo VARCHAR(25) NOT NULL,
-	Marca VARCHAR(25) NOT NULL,
-	Nombre VARCHAR(25) NOT NULL,	
+	Modelo VARCHAR(50) NOT NULL,
+	Marca VARCHAR(50) NOT NULL,
+	Nombre VARCHAR(50) NOT NULL,	
     PrecioFabrica FLOAT NOT NULL,
 	Cantidad INT NOT NULL,
 	CONSTRAINT PK_Auto PRIMARY KEY(IdAuto)
@@ -33,12 +33,12 @@ CREATE TABLE Instancia_Auto(
 
 CREATE TABLE Agente (
     idAgente BIGINT NOT NULL IDENTITY(1,1),
-    Nombre VARCHAR(25) NOT NULL, 
-    RFC VARCHAR(12) NOT NULL,
+    Nombre VARCHAR(50) NOT NULL, 
+    RFC VARCHAR(12) UNIQUE NOT NULL,
     Salario FLOAT NOT NULL,
-    Domicilio VARCHAR(25) NOT NULL,
-    Celular VARCHAR(15) NOT NULL,
-    Email VARCHAR(25) NOT NULL,
+    Domicilio VARCHAR(200) NOT NULL,
+    Celular VARCHAR(15) UNIQUE NOT NULL,
+    Email VARCHAR(50) UNIQUE NOT NULL,
     CONSTRAINT PK_Agente PRIMARY KEY(idAgente)
 );
 
@@ -53,10 +53,10 @@ CREATE TABLE Credito (
 
 CREATE TABLE Cliente (
     idCliente BIGINT NOT NULL IDENTITY(1,1),
-    Nombre VARCHAR(30) NOT NULL,
-    Domicilio VARCHAR(30) NOT NULL,
-    Telefono VARCHAR(30) NOT NULL,
-    Ocupacion VARCHAR(30) NOT NULL,
+    Nombre VARCHAR(50) NOT NULL,
+    Domicilio VARCHAR(200) NOT NULL,
+    Telefono VARCHAR(15) UNIQUE NOT NULL,
+    Ocupacion VARCHAR(50) NOT NULL,
     CONSTRAINT PK_Cliente PRIMARY KEY(idCliente)
 );
 
@@ -96,7 +96,7 @@ CREATE TABLE Pago (
     NoPago INT,
     CantidadPagar FLOAT,
     CONSTRAINT PK_Pago PRIMARY KEY(idPago),
-    CONSTRAINT FK_Pago_Venta FOREIGN KEY(idVenta) REFERENCES Venta (idVenta),
+    CONSTRAINT FK_Pago_Venta FOREIGN KEY(idVenta) REFERENCES Venta (idVenta)
 );
 
 /* RULES */

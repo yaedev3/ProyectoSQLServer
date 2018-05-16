@@ -27,14 +27,20 @@ namespace ProyectoSQLServer
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             string order = "Nombre, Telefono, Domicilio, RazonSocial, Email";
-
-            if(verify_Fields())
+            try
             {
-                string value = String.Format("'{0}','{1}','{2}','{3}','{4}'",
-    textBoxName.Text, textBoxPhone.Text, textBoxResidency.Text, textBoxBusinessName.Text,
-    textBoxEmail.Text);
-                connection.InsertInto(tableName, order, value);
-                dataGridViewSuppliers.DataSource = connection.Refresh(tableName, "*");
+                if (verify_Fields())
+                {
+                    string value = String.Format("'{0}','{1}','{2}','{3}','{4}'",
+        textBoxName.Text, textBoxPhone.Text, textBoxResidency.Text, textBoxBusinessName.Text,
+        textBoxEmail.Text);
+                    connection.InsertInto(tableName, order, value);
+                    dataGridViewSuppliers.DataSource = connection.Refresh(tableName, "*");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El E-mail,Telefono y Razon Social deben ser unicos \ny no se pueden repetir");
             }
 
         }
@@ -89,19 +95,26 @@ namespace ProyectoSQLServer
 
         private void buttonModify_Click(object sender, EventArgs e)
         {
-            if (id != string.Empty)
+            try
             {
-                if (verify_Fields())
+                if (id != string.Empty)
                 {
-                    string values = string.Format("Nombre='{0}', Telefono='{1}', Domicilio='{2}', RazonSocial='{3}', Email='{4}'",
-                        textBoxName.Text, textBoxPhone.Text, textBoxResidency.Text, textBoxBusinessName.Text, textBoxEmail.Text);
-                    connection.UpdateSet(tableName, id, values);
-                    dataGridViewSuppliers.DataSource = connection.Refresh(tableName, "*");
+                    if (verify_Fields())
+                    {
+                        string values = string.Format("Nombre='{0}', Telefono='{1}', Domicilio='{2}', RazonSocial='{3}', Email='{4}'",
+                            textBoxName.Text, textBoxPhone.Text, textBoxResidency.Text, textBoxBusinessName.Text, textBoxEmail.Text);
+                        connection.UpdateSet(tableName, id, values);
+                        dataGridViewSuppliers.DataSource = connection.Refresh(tableName, "*");
 
+                    }
                 }
+                else
+                    error_Message("Primero selecciones un elemento");
             }
-            else
-                error_Message("Primero selecciones un elemento");
+            catch (Exception ex)
+            {
+                MessageBox.Show("El E-mail, Telefono y Razon Social deben ser unicos \ny no se pueden repetir");
+            }            
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

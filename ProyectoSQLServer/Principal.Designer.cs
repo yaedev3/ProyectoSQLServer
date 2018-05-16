@@ -90,7 +90,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(100, 42);
             this.button4.TabIndex = 9;
-            this.button4.Text = "Agente";
+            this.button4.Text = "Empleado";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.Empleado);
             // 

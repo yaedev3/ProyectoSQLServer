@@ -75,29 +75,44 @@ namespace ProyectoSQLServer
 
         private void buttonInsert_Click(object sender, EventArgs e)
         {
-            if (existEmptyFields() != true)
-            {
-                connection.InsertInto(tableName, "Nombre,Domicilio,Telefono,Ocupacion", generateStringValue("INSERT"));
-                dataGridViewClient.DataSource = connection.Refresh(tableName, "*");
-                cleanForm();
-            }
-            else
-                MessageBox.Show("Es Obligatorio llenar todos los campos");
-        }
-
-        private void buttonModify_Click(object sender, EventArgs e)
-        {
-            if (idClient != -1)
+            try
             {
                 if (existEmptyFields() != true)
                 {
-                    connection.UpdateSet(tableName, idClient.ToString(), generateStringValue("UPDATE"));
+                    connection.InsertInto(tableName, "Nombre,Domicilio,Telefono,Ocupacion", generateStringValue("INSERT"));
                     dataGridViewClient.DataSource = connection.Refresh(tableName, "*");
                     cleanForm();
                 }
                 else
-                    MessageBox.Show("Es OBLIGATORIO llenar todos los campos");
+                    MessageBox.Show("Es Obligatorio llenar todos los campos");
             }
+            catch(Exception ex)
+            {
+                MessageBox.Show("El Celular tiene que ser unico\ny no se puede repetir.");
+            }
+            
+        }
+
+        private void buttonModify_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (idClient != -1)
+                {
+                    if (existEmptyFields() != true)
+                    {
+                        connection.UpdateSet(tableName, idClient.ToString(), generateStringValue("UPDATE"));
+                        dataGridViewClient.DataSource = connection.Refresh(tableName, "*");
+                        cleanForm();
+                    }
+                    else
+                        MessageBox.Show("Es OBLIGATORIO llenar todos los campos");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("El Celular tiene que ser unico\ny no se puede repetir.");
+            }       
         }
 
         private void buttonDelete_Click(object sender, EventArgs e)

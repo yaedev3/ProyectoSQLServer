@@ -77,5 +77,18 @@ namespace ProyectoSQLServer
                 labelPhone.Text += datos[3];
             }
         }
+
+        private void tabControlPages_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControlPages.SelectedIndex == 0)
+                this.Width = 248;
+            else
+            {
+                this.Width = 500;
+                dataGridViewData.DataSource = connection.RefreshAuto("SELECT Nombre,RazonSocial,Telefono,NoSerie,FechaCompra FROM Compra INNER JOIN Proveedor ON Compra.idProveedor = Proveedor.idProveedor");
+                for (int j = 0; j < dataGridViewData.Columns.Count; j++)
+                    dataGridViewData.Columns[j].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            }
+        }
     }
 }
